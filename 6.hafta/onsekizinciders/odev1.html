@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="okul">Seçim yapın:</label>
+    <select name="okul" id="okul">
+        <option value="ilkokul">ilkokul</option>
+        <option value="ortaokul">ortaokul</option>
+        <option value="lise">lise</option>
+        <option value="universite">üniversite</option>
+    </select>
+    <button id="buton">Seç</button>
+    <p id="sonuc"></p>
+
+    
+
+<script>
+    document.getElementById("buton").onclick=function(){
+        okul = document.getElementById("okul").value;
+        if(okul=="lise" || okul =="universite"){
+            document.getElementById("sonuc").innerHTML="Girebilirsiniz.";
+
+        }else{
+            document.getElementById("sonuc").innerHTML="Giriş yapamazsınız.";
+        }
+    }
+
+</script>
+</body>
+</html>

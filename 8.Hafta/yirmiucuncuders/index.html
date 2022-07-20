@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* reset html */
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body,html{
+            height: 100%;
+        }
+        table{
+            background-color: gray;
+            border: 2px solid black;
+            border-spacing: 10px;
+            margin: auto;
+            margin-top: 80px;
+            text-align: center;
+        }
+        table .btn{
+            width: 80px;
+            color: black;
+            background-color: rgb(190,  187, 187);
+            line-height: 300%;
+            font-size: 150%;
+        }
+        .btn:hover{
+            cursor: pointer;
+            background-color: wheat;
+        }
+        #islem, #gosterge{
+            padding: 2%;
+            background-color: white;
+            text-align: right;
+        }
+        #islem{
+            height: 50px;
+            font-size: 200%;
+            line-height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="icerik">
+        <table>
+            <tr>
+                <td colspan="5" id="islem">0</td>
+            </tr>
+            <tr>
+                <td colspan="5" id="gosterge"></td>
+            </tr>
+            <tr>
+                <td class="btn rakam">7</td>
+                <td class="btn rakam">8</td>
+                <td class="btn rakam">9</td>
+                <td class="btn opr">/</td>
+                <td class="btn btnCE">CE</td>
+            </tr>
+            <tr>
+                <td class="btn rakam">4</td>
+                <td class="btn rakam">5</td>
+                <td class="btn rakam">6</td>
+                <td class="btn opr">*</td>
+                <td class="btn btnC">C</td>
+            </tr>
+            <tr>
+                <td class="btn rakam">1</td>
+                <td class="btn rakam">2</td>
+                <td class="btn rakam">3</td>
+                <td class="btn opr">-</td>
+                <td rowspan="2" class="btn esit">=</td>
+            </tr>
+            <tr>
+                <td colspan="2" class="btn rakam">0</td>
+                <td class="btn nokta">.</td>
+                <td class="btn opr">+</td>
+            </tr>
+        </table>
+    </div>
+
+
+    <script>
+        //genel değişkenler
+        var durum=false, opt="", sonuc=0;
+
+
+        //nesneleri oluşturucaz
+        // querySelectorAll==> tüm hepsi secildiğinde.
+        //querySelector ==> sadece bunda işlem yap
+        rakam = document.querySelectorAll(".rakam");//rakamlar
+        islem=document.querySelector("#islem");//Gösterge Paneli
+        opr= document.querySelectorAll(".opr");//işlem butonları
+        gosterge = document.querySelector("#gosterge");
+        btnC =document.querySelector(".btnC");
+        btnCE = document.querySelector(".btnCE");
+        esit = document.querySelector(".esit");
+        nokta = document.querySelector(".nokta");
+
+        //forEach==> herhangi birine basıldığınada anlamına gelir. Dizi görevi görür
+        rakam.forEach(function(element){
+
+            element.onclick=function(){
+                //baştakı 0 ı kaldırmak için
+                if(islem.textContent==0 || durum){
+                    islem.textContent="";
+                }
+                islem.textContent+=this.textContent;
+                durum=false; //
+            }
+
+        })
+
+
+        opr.forEach(function(element){
+          element.onclick=function(){
+          durum=true;
+          var opr = this.textContent;
+          //gösterge paneline yazdırma
+          gosterge.textContent=gosterge.textContent+" "+ islem.textContent + " " + opr;
+
+            //   Sonucu yazdırma işlemi
+          switch(opt){
+            case "+": islem.textContent = (sonuc + Number(islem.textContent));break;
+            case "-": islem.textContent = (sonuc - Number(islem.textContent));break;
+            case "*": islem.textContent = (sonuc * Number(islem.textContent));break;
+            case "/": islem.textContent = (sonuc / Number(islem.textContent));break;
+            default:break; //sefault swich i bitirir break kırar
+          }
+          sonuc= Number(islem.textContent);
+          opt = opr;
+
+        }
+        })
+
+        btnC.onclick=function(){
+            islem.textContent="0";
+        }
+
+        btnCE.onclick=function(){
+            islem.textContent="0";
+            gosterge.textContent="";
+            sonuc=0;
+            opt="";
+        }
+
+        esit.onclick=function(){
+            gosterge.textContent=""; //içi boş mu kontrol ediyor
+            durum=true; // durum dugrumu doğruysa swich içerisine girmez direkt sonuca girer
+
+            switch(opt){
+             case "+": islem.textContent = (sonuc + Number(islem.textContent));break;
+             case "-": islem.textContent = (sonuc - Number(islem.textContent));break;
+             case "*": islem.textContent = (sonuc * Number(islem.textContent));break;
+             case "/": islem.textContent = (sonuc / Number(islem.textContent));break;
+             default:break; //sefault swich i bitirir break kırar
+            }
+            sonuc=Number(islem.textContent);
+            islem.textContent=sonuc;
+            sonuc=0;
+            opt="";
+        }
+
+        nokta.onclick=function(){
+            if(!durum && !islem.textContent.includes(".")){//durum hatalı değilse ve başlangıçta nokta yoksa
+                islem.textContent+=".";
+
+            }
+            else if(durum){
+                islem.textContent="0";
+            }
+            durum=false;
+        }
+
+
+
+
+
+
+        
+        
+        
+
+        
+
+        
+        
+        
+
+        
+
+
+
+    </script>
+    
+    
+</body>
+</html>

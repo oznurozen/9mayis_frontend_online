@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* reset html */
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        *{
+            box-sizing: border-box;
+        }
+        #butonlar{
+            text-align: center;
+        }
+        form{
+            background-color: #f2f2f2;
+            padding: 20px;
+            max-width: 400px;
+            margin: auto;
+            border-radius: 5px;
+        }
+
+        input[type=text], input[type=password],input[type=email]{
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-top: 6px;
+            margin-bottom: 16px;
+        }
+
+        input[type=button]{
+            background-color: #4caf50;
+            padding: 12px 20px;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type=button]:hover{
+            background-color: #45a049;
+        }
+        #girisHata, #kayitHata{
+            color: red;
+        }
+        #girisformu{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <input type="color" id="renk">
+        <!-- giriş/kayıt butonları -->
+        <div id="butonlar">
+            <button id="kayit">Kayıt</button>
+            <button id="giris">Giriş</button>
+        </div>
+
+        <!-- Kayıt Formu -->
+        <form id="kayitformu">
+            <h3>Kayıt Ol</h3>
+            <label for="kullaniciadi">kullanıcı adı</label>
+            <input type="text" id="kullaniciadi">
+            <label for="email">E-mail</label>
+            <input type="email" id="email">
+            <label for="parola">Parola</label>
+            <input type="password" id="parola">
+            <label for="parola2">Parola Tekrar</label>
+            <input type="password" id="parola2">
+            <input type="button" value="Kayıt Ol" id="kayitol">
+            <div id="kayitHata"></div>
+        </form>
+
+        <!--Giriş Formu-->
+        <form id="girisformu">
+            <h3>Giriş Yap</h3>
+            <label for="kullanicigiris">Kullanıcı Adı</label>
+            <input type="text" id="kullanicigiris">
+            <label for="parolagiris">Parola</label>
+            <input type="password" id="parolagiris">
+            <input type="button" value="Giriş yap" id="girisyap">
+            <p id="girisHata"></p>
+        </form>
+    </div>
+
+    <script src="jquery.min.js"></script>
+    <script>
+        $("#renk").change(function(){
+            renk = $("#renk").val();
+            $("body").css("background-color", renk)
+        })
+
+        // Giriş butonuna tıklandığında
+        $("#giris").click(function(){
+            $("#kayitformu").fadeOut(function(){
+                $("#girisformu").fadeIn();
+            })
+        })
+
+        // Kayıt butonuna tıklandığında
+        $("#kayit").click(function(){
+            $("#girisformu").fadeOut(function(){
+                $("#kayitformu").fadeIn();
+            })
+        })
+
+        //Giriş Yap butonuna tıklandığında
+        $("#girisyap").click(function(){
+            kullaniciGiris = $("#kullanicigiris").val();
+            parolaGiris = $("#parolagiris").val();
+            kullaniciAdi="oznur";
+            parola = "1234";
+            if(kullaniciGiris==kullaniciAdi && parolaGiris==parola){
+                $("#girisHata").html("");
+                alert("Giriş Başarılı"); 
+               
+            }else{
+                $("#girisHata").html("Kullanıcı adı veya parola hatalı");
+            }
+        })
+
+        //Kayıt Ol butonu tıklandığında
+        $("#kayitol").click(function(){
+            kullaniciAdi = $("#kullaniciadi").val();
+            email = $("#email").val();
+            parola = $("#parola").val();
+            parola2 = $("#parola2").val();
+
+            if(kullaniciAdi =="" || email =="" || parola=="" || parola2==""){
+                $("#kayitHata").html("Tüm alanlar doldurulmalıdır")
+            }else{
+                if(parola != parola2){
+                    $("#kayitHata").html("Parolalar eşleşmiyor")
+                }else{
+                    alert("Kayıt Başarılı")
+                }
+            }
+            
+
+        })
+
+
+    </script>
+</body>
+</html>

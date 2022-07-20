@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="yas" placeholder="yaşınız"><br><br>
+    <input type="number" id="boy" placeholder="boyunuz(cm)"><br><br>
+    <input type="number" id="kilo" placeholder="kilonuz(kg)"><br><br>
+    <select id="cinsiyet">
+        <option value="kadin">Kadın</option>
+        <option value="erkek">Erkek</option>
+    </select><br><br>
+    <button id="buton">Hesapla</button>
+    <p id="sonuc"></p>
+    <p id="sonuc2"></p>
+    
+
+    <script>
+        document.getElementById("buton").onclick=function(){
+            yas = document.getElementById("yas").value;
+            boy = document.getElementById("boy").value;
+            kilo = document.getElementById("kilo").value;
+            cinsiyet = document.getElementById("cinsiyet").value;
+            hesap = kilo/(boy/100*boy/100);
+
+           /* 18.5 ve altı Düşük Kilolu 
+            18.5 - 24.9 Normal Kilolu 
+            25-29.9 Fazla Kilolu 
+            30-40 Obez 
+            40 ve üstü Aşırı Obez*/
+
+            if(hesap<=18.5){
+                document.getElementById("sonuc").innerHTML="Düşük Kilolusunuz.";
+            }else if(hesap>18.5 && hesap<=24.9){
+                document.getElementById("sonuc").innerHTML="Normal Kilolusunuz.";
+            }else if(hesap>24.9 && hesap<=29.9){
+                document.getElementById("sonuc").innerHTML="Fazla Kilolusunuz.";
+            }else if(hesap>29.9 && hesap<=40){
+                document.getElementById("sonuc").innerHTML="Obezsiniz";
+            }else if(hesap>40 && hesap<=60){
+                document.getElementById("sonuc").innerHTML="Aşırı Obezsiniz";
+            }else{
+                document.getElementById("sonuc").innerHTML="Geçersiz";
+            }
+
+            if(yas>50 && cinsiyet=="erkek"){
+                document.getElementById("sonuc2").innerHTML="Bol bol yürüyüş yapmalısınız";
+            }else if(yas>60 && cinsiyet=="kadin"){
+                document.getElementById("sonuc2").innerHTML="Sebze tüketimini arttırmalısınız.";
+            }else{
+                document.getElementById("sonuc2").innerHTML="";
+            }
+
+        }
+    </script>
+</body>
+</html>

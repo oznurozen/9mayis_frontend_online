@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <button id="buton">Gösteer</button>
+
+
+    <script>
+        // function merhaba(){
+        //     document.write("merhaba <br>");
+        // }
+
+            document.getElementById("buton").onclick=function(){
+                merhaba();
+            }
+            
+            function merhaba(){
+                var n,s;
+                n= prompt("sayı : ");
+                for(s=1; s<=n; s++){
+                    document.write("merhaba <br>"); 
+                }
+            }
+        
+    </script>
+</body>
+</html>

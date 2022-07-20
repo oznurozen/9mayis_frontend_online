@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #kare,#kare1,#kare2{
+            height: 150px;
+            width: 150px;
+            background-color: red;
+            margin: 10px;
+
+        }
+        .daire{
+            height: 150px;
+            width: 150px;
+            background-color: green;
+            border-radius: 50%;
+            margin: 10px;
+
+
+        }
+    </style>
+</head>
+<body>
+    <p></p>
+
+    <div id="kare"></div>
+    <div id="kare1"></div>
+    <div id="kare2"></div>
+    <div class="daire"></div>
+
+    
+
+
+    <script src="jquery.min.js"></script>
+    <script>
+        $("div").click(function(){
+            alert("Bu bir " + $(this).attr("id"));
+            
+        })
+        
+     
+    </script>
+</body>
+</html>

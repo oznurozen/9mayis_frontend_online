@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style>
+		div{
+			float: left;
+			width: 25%;
+			height: 400px;
+		}
+		.div1{
+			background-color: pink;
+		}
+		.div2{
+			background-color: blue;
+		}
+		.div3{
+			background-color: red;
+		}
+		.div4{
+			background-color: black;
+		}
+
+
+		@media screen and (max-width: 992px){
+			div{
+				width: 33%;
+			}
+			.div4{
+				display: none;
+			}
+			.div3{
+				background-color: green;
+			}
+		}
+
+		@media screen and (max-width: 600px){
+			div{
+				width: 50%;
+			}
+			.div1{
+				width: 100%;
+			}
+
+		} 
+		
+	</style>
+</head>
+<body>
+	<!--
+		0-767px ==> mobil ekranlar
+		768px-991px ==> dikey tablet
+		992px-1199px ==> yatay tablet +minibook laplop
+		1200px ve üstü ==> notebook desktap
+	-->
+	<div class="div1">
+		
+	</div>
+	<div class="div2">
+		
+	</div>
+	<div class="div3">
+		
+	</div>
+	<div class="div4">
+		
+	</div>
+
+
+</body>
+</html>

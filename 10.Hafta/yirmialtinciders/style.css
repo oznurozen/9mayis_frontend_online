@@ -1,0 +1,48 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .hero-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("img/topluluk.png");
+    height: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+  
+  .hero-text {
+    text-align: center;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+  }
+  .card-text, .card-title{
+    text-align: center;
+  }
+  .card-title:hover{
+    color: brown;
+    cursor: pointer;
+
+  }
+  .navbar-nav> .nav-item> .nav-link{
+    color: white;
+  }
+  .navbar-nav> .nav-item> .nav-link:hover{
+    color: grey;
+  }
+  .flex-column> .nav-item > .nav-link{
+    color: gray;
+    font-weight: bold;
+  }
+  .flex-column> .nav-item > .nav-link:hover{
+    color: brown;
+    cursor: pointer;
+  }
+  
+  
+ 

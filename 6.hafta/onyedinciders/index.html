@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="inputDegeri">
+    <button id="buton">Giriş</button>
+
+    <script>
+        document.getElementById("buton").onclick=function(){
+            yas = document.getElementById("inputDegeri").value;
+            if(yas!=20){
+            alert("İzniniz var");
+        }else{
+            alert("Siteye girişiniz engellendi");
+        }
+        }
+
+
+
+        /*x = 50;
+        if(x==20){
+            alert("İzniniz var");
+        }else{
+            alert("Siteye girişiniz engellendi");
+        }*/
+    </script>
+</body>
+</html>

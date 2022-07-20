@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="yasınız">Yaşınız</label>
+    <input type="number" id="yasınız">
+    <label for="yası">Arkadaşınızın yaşı</label>
+    <input type="number" id="yası">
+    <button id="buton">Hesapla</button>
+    
+
+    <script>
+        document.getElementById("buton").onclick=function(){
+            yas1= document.getElementById("yasınız").value;
+            yas2= document.getElementById("yası").value;
+            fark = yas1-yas2;
+
+            if(yas1>yas2){
+                alert("yaşınız: " + yas1 + " aranızdaki fark: " + fark);
+            }else if(yas2>yas1){
+                alert("Arkadaşıızın yaşı: " + yas2 + " aranızdaki fark: " + Math.abs(fark));
+            }
+            else{
+                alert("yaşlarınız eşittir");
+            }
+        }
+    </script>
+</body>
+</html>

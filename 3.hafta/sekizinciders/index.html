@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style>
+		/*a:link{
+			color: red;
+		}
+		a:visited{
+			color: green;
+		}
+		a:hover{
+			color: pink;
+		}
+		a:active{
+			color: blue;
+		}*/
+
+		/*p:first-child{
+			color: blue;
+		}*/
+		p i:first-child{
+			color: red;
+		}
+		p::first-letter{
+			font-size: 50px;
+			color: red;
+
+		}
+		p::first-line{
+			color: blue;
+		}
+		h1::before{
+			content: url(icon.png);
+		}
+		h1::after{
+			content: url(icon.png);
+		}
+
+		::marker{
+			color: red;
+			content: "+";
+		}
+	</style>
+</head>
+<body>
+	<!--<a href="https://www.google.com.tr/">Bu bir linktir</a>
+	<a href="https://www.youtube.com/">Youtube</a>-->
+	<h1>Bu bir Başlıktır</h1>
+
+	<p>Bu bir paragraftır</p>
+	<p>Bu bir paragraftır</p>
+
+	<div>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		<p>Bu bir paragraftır</p>
+		<p>Bu bir paragraftır</p>
+		<p>Bu bir paragraftır</p>
+	</div>
+
+	<div>
+		<p>Bu <i>bir</i> paragraftır <i>deneme</i></p>
+		<p>Bu <i>bir</i> paragraftır <i>deneme</i></p>
+		<p>Bu <i>bir</i> paragraftır <i>deneme</i></p>
+	</div>
+
+	<ul>
+		<li>Yumurta</li>
+		<li>Yumurta</li>
+		<li>Yumurta</li>
+		<li>Yumurta</li>
+		<li>Yumurta</li>
+	</ul>
+	<ol>
+		<li>Yumurta</li>
+		<li>Yumurta</li>
+		<li>Yumurta</li>
+		<li>Yumurta</li>
+	</ol>
+
+</body>
+</html>

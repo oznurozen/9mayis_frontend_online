@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="text" id="isimsoyisim" placeholder="isim soyisim"><br><br>
+    <input type="text" id="email" placeholder="E-mail"><br><br>
+    <input type="password" id="parola" placeholder="şifrenizi giriniz..."><br><br>
+    <input type="password" id="parolatekrar" placeholder="şifrenizi tekraar giriniz..."><br><br>
+    <button id="uye">Üye Ol</button>
+
+
+    <script>
+
+        document.getElementById("uye").onclick=function(){
+            isimsoyisim = document.getElementById("isimsoyisim").value;
+            email = document.getElementById("email").value;
+            parola = document.getElementById("parola").value;
+            parolatekrar = document.getElementById("parolatekrar").value;
+
+            if(isimsoyisim.length<6 || parola.length<6 || !email.includes('@') || parola!=parolatekrar){
+               alert("Hatalı giriş."); 
+            }else{
+                alert("Hosgeldiniz");
+            }
+
+           /* if(isimsoyisim.length<6){
+                alert("hatalı giriş1");
+            }else if(!email.includes('@')){
+                alert("hatalı giriş2");
+            }else if(parola.length<6){
+                alert("hatalı giriş3");
+            }else if(parola!=parolatekrar){
+                alert("hatalı giriş4");
+            }else{
+                alert("giriş başarılı");
+            }*/
+        }
+       
+       
+       
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" id="kullaniciAdi" placeholder="Kullanıcı adı giriniz">
+    <input type="password" id="parola" placeholder="Parolanızı giriniz">
+    <button id="buton">Giriş</button>
+    <script>
+        document.getElementById("buton").onclick=function(){
+            kullanici= document.getElementById("kullaniciAdi").value;
+            sifre = document.getElementById("parola").value;
+            
+            if(kullanici=="oznur" && sifre=="12345"){
+                alert("izniniz var");
+            }else{
+                alert("siteye girişiniz engellendi");
+            }
+        }
+
+
+
+        // isim = "oznur";
+        // yas = 50 ;
+        // if(yas==25 && isim=="oznur"){
+        //     alert("Girişinize izin verildi.");
+        // }
+        // else{
+        //     alert("Siteye girişiniz engellendi");
+        // }
+    </script>
+</body>
+</html>
